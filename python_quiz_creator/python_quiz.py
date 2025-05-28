@@ -12,7 +12,7 @@ class Quiz:
 
     def save_to_file(self, file_name):
         # save the questions and answers to a text file
-        with open(file_name, 'w') as file:
+        with open(file_name, 'w', encoding='utf-8') as file:
             for question in self.questions:
                 file.write(f"Q: {question['question']}\n")  # write the question
                 for key, answer in question['answers'].items():
