@@ -19,3 +19,10 @@ class BaseQuiz:
         except json.JSONDecodeError:
             print(f"Error: File '{self.quiz_output}' is not a valid JSON file.")
         return []
+    
+    def start_quiz(self):
+        print("Welcome to the Quiz!")
+        
+        if not self.questions:
+            print("No questions found in the quiz file.")
+            return
