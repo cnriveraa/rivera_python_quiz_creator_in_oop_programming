@@ -19,7 +19,7 @@ class QuizCreator:
                 answer = input(f"Enter answer option {option}: ") # ask for answer options
                 answers[option] = answer
 
-            correct_answer = input("Enter the correct answer (a/b/c/d: ").lower() # ask for the correct answer
+            correct_answer = input("Enter the correct answer (a/b/c/d): ").lower()
 
             # validate the correct answer
             if correct_answer not in answers:
