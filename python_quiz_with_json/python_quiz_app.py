@@ -73,3 +73,10 @@ class Quiz(BaseQuiz):
                 break
 
         print("Quiz finished!")
+
+class QuizApp:
+    def __init__(self, quiz_file_path):
+        self.quiz = Quiz(quiz_file_path)
+
+    def run(self):
+        self.quiz.start_quiz()
