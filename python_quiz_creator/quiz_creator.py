@@ -24,7 +24,8 @@ class QuizCreator:
             if correct_answer not in answers:
                 print("Invalid correct answer. Plese enter a valid option (a/b/c/d).")
                 continue
-
+            
+            self.quiz.add_question(question, answers, correct_answer)
             another_question = input("Do you want to add another question? (yes/no): ").lower()
 
             if another_question != 'yes':
