@@ -47,3 +47,14 @@ class Quiz(BaseQuiz):
     def load_questions(self):
         questions_data = super().load_questions()
         return [Question(question['question'], question['answer']) for question in questions_data]
+    
+    def ask_question(self, question):
+        print("Question:")
+        print(question.question_text)
+        
+        user_answer = input("Type your answer: ").strip()
+
+        if question.is_correct(user_answer):
+            print("Correct!")
+        else:
+            print(f"Wrong! The correct answer is: {question.answer_text}")
