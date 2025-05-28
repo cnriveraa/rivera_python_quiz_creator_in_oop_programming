@@ -51,10 +51,25 @@ class Quiz(BaseQuiz):
     def ask_question(self, question):
         print("Question:")
         print(question.question_text)
-        
+
         user_answer = input("Type your answer: ").strip()
 
         if question.is_correct(user_answer):
             print("Correct!")
         else:
             print(f"Wrong! The correct answer is: {question.answer_text}")
+
+    def start_quiz(self):
+        super().start_quiz()
+
+        while self.questions:
+            selected_question = random.choice(self.questions)
+            self.ask_question(selected_question)
+            self.questions.remove(selected_question)
+            continue_quiz = input("Do you want to continue? (yes/no): ").strip().lower()
+
+            if continue_quiz != 'yes':
+                print("Thank you for playing!")
+                break
+
+        print("Quiz finished!")
