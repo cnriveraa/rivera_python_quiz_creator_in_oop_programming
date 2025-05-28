@@ -35,8 +35,8 @@ class QuizCreator:
                 print("Thank you for using the quiz creator!")
                 break # end the loop
 
-        # save the quiz to a file
-        def save_quiz(self):
-            file_name = "quiz_questions.txt" # name of the file to save the quiz
-            self.quiz.save_to_file(file_name)
-            print(f"Quiz saved to {file_name}") # confirmation message
+    # save the quiz to a file
+    def save_quiz(self):
+        file_name = "quiz_questions.txt" # name of the file to save the quiz
+        self.quiz.save_to_file(file_name)
+        print(f"Quiz saved to {file_name}") # confirmation message
