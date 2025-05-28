@@ -11,6 +11,7 @@ class QuizCreator:
         while True:
             question = input("Enter the question (type 'exit' to finish): ") # ask the user for a question
             if question.lower() == 'exit': # check if the user wants to exit
+                print("Exiting quiz creator.")
                 break
 
             answers = {}
