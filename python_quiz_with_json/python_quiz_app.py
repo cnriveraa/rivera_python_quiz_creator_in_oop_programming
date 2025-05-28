@@ -54,7 +54,7 @@ class Quiz(BaseQuiz):
 
         user_answer = input("Type your answer: ").strip()
 
-        if question.is_correct(user_answer):
+        if question.answer_text == user_answer:
             print("Correct!")
         else:
             print(f"Wrong! The correct answer is: {question.answer_text}")
@@ -80,3 +80,9 @@ class QuizApp:
 
     def run(self):
         self.quiz.start_quiz()
+
+# entry point for the application
+if __name__ == "__main__":
+    quiz_file_path = r'C:\Users\Chloie Nicole Rivera\OneDrive - Polytechnic University of the Philippines\Desktop\BSCPE 1-6\2ND SEM\[CMPE 103] OOP\python\rivera_python_quiz_creator_in_oop_programming\python_quiz_with_json\quiz_questions.json'
+    app = QuizApp(quiz_file_path)
+    app.run()
