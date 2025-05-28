@@ -31,3 +31,14 @@ class Question:
     def __init__(self, question_text, answer_text):
         self.question_text = question_text
         self.answer_text = answer_text
+
+    def ask_question(self, question):
+        print("Question:")
+        print(question.question_text)
+        
+        user_answer = input("Type your answer: ")
+
+        if question.is_correct(user_answer):
+            print("Correct!")
+        else:
+            print(f"Incorrect! The correct answer is: {question.answer_text}")
