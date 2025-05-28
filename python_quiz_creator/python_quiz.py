@@ -20,5 +20,5 @@ class Quiz:
                         file.write(f"{key}: {answer}\n")  # write the answers
                     file.write(f"Correct Answer: {question['correct_answer']}\n")  # write the correct answer
                     file.write("\n")  # add a new line for separation between questions
-        except Exception as e:
-            print(f"An error occurred while saving the file: {e}")
+        except:
+            print(f"An error occurred while saving the file.")
