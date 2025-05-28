@@ -12,10 +12,13 @@ class Quiz:
 
     def save_to_file(self, file_name):
         # save the questions and answers to a text file
-        with open(file_name, 'w', encoding='utf-8') as file:
-            for question in self.questions:
-                file.write(f"Q: {question['question']}\n")  # write the question
-                for key, answer in question['answers'].items():
-                    file.write(f"{key}: {answer}\n")  # write the answers
-                file.write(f"Correct Answer: {question['correct_answer']}\n")  # write the correct answer
-                file.write("\n")  # add a new line for separation between questions
+        try:
+            with open(file_name, 'w', encoding='utf-8') as file:
+                for question in self.questions:
+                    file.write(f"Q: {question['question']}\n")  # write the question
+                    for key, answer in question['answers'].items():
+                        file.write(f"{key}: {answer}\n")  # write the answers
+                    file.write(f"Correct Answer: {question['correct_answer']}\n")  # write the correct answer
+                    file.write("\n")  # add a new line for separation between questions
+        except Exception as e:
+            print(f"An error occurred while saving the file: {e}")
