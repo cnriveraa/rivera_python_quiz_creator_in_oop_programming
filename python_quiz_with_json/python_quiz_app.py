@@ -42,3 +42,8 @@ class Question:
             print("Correct!")
         else:
             print(f"Incorrect! The correct answer is: {question.answer_text}")
+
+class Quiz(BaseQuiz):
+    def load_questions(self):
+        questions_data = super().load_questions()
+        return [Question(question['question'], question['answer']) for question in questions_data]
